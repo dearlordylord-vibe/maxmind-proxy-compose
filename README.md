@@ -26,23 +26,23 @@ This service acts as a proxy to MaxMind's GeoIP services. It exposes three servi
 You must use the same API format as you would for direct MaxMind API calls, including your license key and account ID:
 
 ```
-# For updates.maxmind.com endpoints (default port: 8081)
-curl "http://localhost:8081/path/to/endpoint?license_key=YOUR_LICENSE_KEY&account_id=YOUR_ACCOUNT_ID"
+# For updates.maxmind.com endpoints (default port: 8080)
+curl "http://localhost:8080/path/to/endpoint?license_key=YOUR_LICENSE_KEY&account_id=YOUR_ACCOUNT_ID"
 
-# For download.maxmind.com endpoints (default port: 8082)
-curl "http://localhost:8082/path/to/endpoint?license_key=YOUR_LICENSE_KEY&account_id=YOUR_ACCOUNT_ID"
+# For download.maxmind.com endpoints (default port: 8081)
+curl "http://localhost:8081/path/to/endpoint?license_key=YOUR_LICENSE_KEY&account_id=YOUR_ACCOUNT_ID"
 ```
 
 #### Example: Download GeoLite2 Database
 
 ```
-curl "http://localhost:8082/app/geoip_download?edition_id=GeoLite2-City&license_key=YOUR_LICENSE_KEY&account_id=YOUR_ACCOUNT_ID&suffix=tar.gz" -o GeoLite2-City.tar.gz
+curl "http://localhost:8081/app/geoip_download?edition_id=GeoLite2-City&license_key=YOUR_LICENSE_KEY&account_id=YOUR_ACCOUNT_ID&suffix=tar.gz" -o GeoLite2-City.tar.gz
 ```
 
 #### Example: Query IP Information
 
 ```
-curl "http://localhost:8081/geoip/v2.1/city/8.8.8.8?license_key=YOUR_LICENSE_KEY&account_id=YOUR_ACCOUNT_ID"
+curl "http://localhost:8080/geoip/v2.1/city/8.8.8.8?license_key=YOUR_LICENSE_KEY&account_id=YOUR_ACCOUNT_ID"
 ```
 
 ### Helper Script

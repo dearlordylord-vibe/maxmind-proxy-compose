@@ -3,12 +3,13 @@ services:
     image: ghcr.io/gabe565/geoip-cache-proxy:latest
     ports:
       - "${PORT:-8080}:8080"
-      - "${DOWNLOAD_PORT:-8082}:8081"
-      - "${DEBUG_PORT:-8083}:6060"
+      - "${DOWNLOAD_PORT:-8081}:8081"
+      - "${DEBUG_PORT:-6060}:6060"
     environment:
       - GEOIP_CACHE_BACKEND=redis
       - GEOIP_REDIS_ADDR=redis:6379
       - GEOIP_REDIS_HOST=redis
+      - SERVICE_FQDN_MAXMIND_PROXY_8081=true
     depends_on:
       - redis
     restart: unless-stopped
