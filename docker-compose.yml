@@ -2,9 +2,9 @@ services:
   geoip:
     image: ghcr.io/gabe565/geoip-cache-proxy:latest
     ports:
-      - "${PORT:-8080}:8080"
+      # - "${PORT:-8080}:8080"
       - "${DOWNLOAD_PORT:-8081}:8081"
-      - "${DEBUG_PORT:-6060}:6060"
+      # - "${DEBUG_PORT:-6060}:6060"
     environment:
       - GEOIP_CACHE_BACKEND=redis
       - GEOIP_REDIS_ADDR=redis:6379
