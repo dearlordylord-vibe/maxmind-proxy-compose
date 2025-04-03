@@ -1,0 +1,16 @@
+# Docker volumes
+redis-data
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local scripts
+curl-wrapper.sh
+maxmind-query.sh
